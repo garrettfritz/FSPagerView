@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FSPagerViewLayout: UICollectionViewLayout {
+open class FSPagerViewLayout: UICollectionViewLayout {
     
     internal var contentSize: CGSize = .zero
     internal var leadingSpacing: CGFloat = 0
@@ -53,6 +53,7 @@ class FSPagerViewLayout: UICollectionViewLayout {
         guard self.needsReprepare || self.collectionViewSize != collectionView.frame.size else {
             return
         }
+        
         self.needsReprepare = false
         
         self.collectionViewSize = collectionView.frame.size
@@ -198,7 +199,7 @@ class FSPagerViewLayout: UICollectionViewLayout {
     
     // MARK:- Internal functions
     
-    internal func forceInvalidate() {
+    open func forceInvalidate() {
         self.needsReprepare = true
         self.invalidateLayout()
     }
